@@ -2,7 +2,9 @@ import type { NextConfig } from 'next';
 import path from 'path';
 
 const isProd = process.env.NODE_ENV === 'production';
-const repoName = 'Creative-agency-landing-page';
+const repoName = process.env.GITHUB_REPOSITORY
+  ? process.env.GITHUB_REPOSITORY.split('/')[1]
+  : 'Studio-Monolith-landing-page';
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
